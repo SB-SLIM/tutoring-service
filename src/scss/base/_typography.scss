@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+body{
+font-family: 'Inter', sans-serif;
+font-weight: 400;
+line-height: 1.7;
+color:$clr-grey-dark-3;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: $clr-black;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+h1 {
+font-size: 5.6rem;
+}
+
+h2{
+font-size: 2.8rem;
+font-weight: 600;
+}
+h3{
+font-size: 2.2rem;
+font-weight: 400;
+}
+h4{
+font-size: 1.8rem;
+}
+h5{
+font-size: 1.6rem;
+}
+h6{
+font-size: 1.2rem;
+}
+

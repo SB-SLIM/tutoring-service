@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  grid-template-columns:
+    [full-start ] 1fr [center-start] repeat(
+      8,
+      [col-start]minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] 1fr [full-end];
+
+  grid-template-rows: 7rem 1fr minmax(7rem, min-content);
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  grid-column: center-start/center-end;
+  grid-row: 1/2;
+}
+
+main {
+  grid-column: center-start/ center-end;
+  grid-row: 2/3;
+}
+
+footer {
+  grid-column: center-start/ center-end;
+  grid-row: 3/4;
+}

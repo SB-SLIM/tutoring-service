@@ -1,0 +1,43 @@
+//COLORS
+$clr-primary: #0066FF;
+
+$clr-secondary-tutor: #A942FF;
+$clr-secondary-student: #00BA78;
+
+$clr-dashboard:#273343;
+$clr-warnning: #F5B100;
+$clr-alert: #FF0D1F;
+$clr-switch:#D3E6E5;
+
+$clr-grey-light-1:#f7f7f7; 
+$clr-grey-light-2:#eee; 
+$clr-grey-dark: #777;
+$clr-grey-dark-2: #999;
+$clr-grey-dark-3: #1C1C20;
+
+$clr-black : #000;
+$clr-white: #fff;
+
+//FONT
+$default-font-size: 1.6rem;
+
+//GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal:6rem;
+
+//MARGIN
+$margin:(
+    sm: 1rem,
+    md: 2rem,
+    lg: 2.5rem
+);
+
+//MEDIA QUEARY 
+$breakpoint: (
+    sm: 600px,
+    md: 700px,
+    lg: 1200px,
+    xl: 1400px
+);
