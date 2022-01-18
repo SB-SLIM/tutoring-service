@@ -9,6 +9,7 @@ import { ReactComponent as Icam } from "../../assets/icon-cam.svg";
 import { ReactComponent as Icoins } from "../../assets/icon-coins.svg";
 import { ReactComponent as Ishare } from "../../assets/icon-share.svg";
 
+
 const Home = () => {
   return (
     <main className="home ">
