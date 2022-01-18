@@ -1,0 +1,87 @@
+@use "../abstracts" as *;
+
+.navbar {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .links {
+    display: flex;
+
+    & > *:not(:last-of-type) {
+      margin-right: $margin-default;
+    }
+  }
+
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      width: 14rem;
+      height: 4.5rem;
+      margin-right: $margin-default;
+    }
+  }
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .langage {
+      margin-right: $margin-default;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .langage {
+      position: relative;
+    }
+    .langages-list {
+      display: none;
+      position: absolute;
+      width: 15rem;
+      top: 25px;
+      left: -17px;
+      padding: 1rem;
+      background: white;
+      border: 1px solid #979797;
+      border-radius: 5px;
+      box-shadow: 0 1rem 3rem rgba(#000000, 0.3);
+      z-index: 1000;
+      ul > * {
+        padding: 1rem;
+      }
+
+      .triangle {
+        position: absolute;
+        top: -5px;
+        left: 20px;
+        width: 0.8rem;
+        height: 0.5rem;
+        background: #979797;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        
+        .inside {
+          position: absolute;
+          top: 1px;
+          right: 1px;
+          bottom: 0px;
+          left: 1px;
+          background: white;
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          
+        }
+      }
+    }
+
+    .active {
+      display: block;
+    }
+  }
+}

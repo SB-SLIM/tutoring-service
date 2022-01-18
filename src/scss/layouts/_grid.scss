@@ -1,4 +1,4 @@
-.container {
+.grid {
   display: grid;
   grid-template-columns:
     [full-start ] 1fr [center-start] repeat(
@@ -13,7 +13,7 @@
 }
 
 header {
-  grid-column: center-start/center-end;
+  grid-column: full-start/full-end;
   grid-row: 1/2;
 }
 
@@ -23,6 +23,11 @@ main {
 }
 
 footer {
-  grid-column: center-start/ center-end;
+  grid-column: full-start/ full-end;
   grid-row: 3/4;
 }
+.container{
+  max-width: 112rem;
+  margin: 0 auto;
+}
+

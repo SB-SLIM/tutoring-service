@@ -1,4 +1,93 @@
-.home{
+@use "../abstracts" as *;
+
+// Section-1: Home
+.home {
+  position: relative;
+
+  .hero {
     display: grid;
-    
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    &__img {
+      position: relative;
+      .circle-1 {
+        position: absolute;
+        width: 10.2rem;
+        height: 10.2rem;
+        border-radius: 50%;
+        background: rgba($clr-primary, 0.6);
+        display: inline-block;
+        top: 30px;
+        left: 0;
+        z-index: -1000;
+      }
+      .circle-2 {
+        position: absolute;
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        background: rgba(#f5b100, 0.6);
+        display: inline-block;
+        top: 0px;
+        left: 410px;
+        z-index: -1000;
+      }
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+
+      .circle-3 {
+        position: absolute;
+        width: 30.7rem;
+        height: 30.7rem;
+        border-radius: 50%;
+        background: rgba($clr-primary, 0.2);
+        display: inline-block;
+        right: -10rem;
+        z-index: -1000;
+      }
+
+      .title {
+        font-weight: 400;
+      }
+    }
+  }
 }
+
+// Section-2: How it Work
+.how {
+  background: $clr-bg-light-2;
+  &__work {
+    padding: 3rem 2rem;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(min-content, 1fr));
+      column-gap: 3rem;
+    }
+  }
+  &__tuto {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+
+    overflow: hidden;
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    img {
+      transform: translateX(13%);
+    }
+  }
+}
+
+// Section-3: !!!!!

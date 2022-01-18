@@ -1,1 +1,46 @@
-@use '../abstracts'
+@use "../abstracts" as *;
+
+.btn:link,
+.btn:visited,
+.btn {
+  border-radius: 5px;
+  padding: 1rem 3rem;
+  width: max-content;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: $clr-primary;
+  color: $clr-white;
+}
+
+.btn:hover {
+  transform: translateY(-0.3);
+  box-shadow: 0 1rem 2rem rgba(#000000, 0.2);
+}
+
+.btn:active,
+.btn:visited {
+  transform: translateY(-0.1);
+  box-shadow: 0 0.5rem 1rem rgba(#000000, 0.2);
+}
+
+.btn {
+  &--primary-outlined {
+    color: $clr-primary;
+    border: 1px solid $clr-primary;
+  background: $clr-white;
+
+  }
+
+  &--secondary {
+    background: $clr-secondary-student;
+    color: $clr-white;
+  }
+
+  &--secondary-outlined {
+    color: $clr-secondary-student;
+    border: 1px solid $clr-secondary-student;
+    background: $clr-white;
+  }
+}

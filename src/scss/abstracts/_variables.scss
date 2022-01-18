@@ -4,7 +4,8 @@ $clr-primary: #0066FF;
 $clr-secondary-tutor: #A942FF;
 $clr-secondary-student: #00BA78;
 
-$clr-dashboard:#273343;
+$clr-dashboard-light:#273343;
+$clr-dashboard-dark:#232E3C;
 $clr-warnning: #F5B100;
 $clr-alert: #FF0D1F;
 $clr-switch:#D3E6E5;
@@ -17,6 +18,9 @@ $clr-grey-dark-3: #1C1C20;
 
 $clr-black : #000;
 $clr-white: #fff;
+
+$clr-bg-light-1: #F8F8F8;
+$clr-bg-light-2: #F8F4EF;
 
 //FONT
 $default-font-size: 1.6rem;
@@ -34,6 +38,7 @@ $margin:(
     lg: 2.5rem
 );
 
+$margin-default: 1.5rem;
 //MEDIA QUEARY 
 $breakpoint: (
     sm: 600px,
