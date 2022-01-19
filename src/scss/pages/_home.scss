@@ -9,7 +9,7 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
 
-    @include respond(sm) {
+    @include respond(md) {
       grid-template-columns: 1fr;
     }
 
@@ -31,9 +31,10 @@
           left: 10px;
         }
 
-        @include respond(sm) {
+        @include respond(md) {
           display: none;
         }
+        
       }
       .circle-2 {
         position: absolute;
@@ -42,17 +43,18 @@
         border-radius: 50%;
         background: rgba(#f5b100, 0.6);
         display: inline-block;
-        top: 0px;
-        left: 410px;
+        top: 2%;
+        left: 75%;
         z-index: -1000;
         @include respond(lg) {
-          width: 13rem;
-          height: 13rem;
-          top: 20px;
-          left: 255px;
+          width: 17rem;
+          height: 17rem;
+          
         }
 
-        @include respond(sm) {
+        
+
+        @include respond(md) {
           display: none;
         }
       }
@@ -60,7 +62,7 @@
       img {
         height: 100%;
 
-        @include respond(sm) {
+        @include respond(md) {
           display: none;
         }
       }
@@ -90,7 +92,7 @@
           height: 25rem;
         }
 
-        @include respond(sm) {
+        @include respond(md) {
           display: none;
         }
       }
@@ -118,6 +120,7 @@
       column-gap: 3rem;
 
       @include respond(lg) {
+        grid-template-columns: repeat(2, minmax(24.5rem, min-content));
         justify-content: center;
         row-gap: 2rem;
       }
