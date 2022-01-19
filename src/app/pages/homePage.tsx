@@ -1,7 +1,9 @@
 import Button from "app/components/button";
 import React from "react";
-import women from "../../assets/img-women.png";
-import womenMask from "../../assets/img-women-mask.png";
+import women from "../../assets/images/1x/img-women-1x.png";
+import womenMask1x from "../../assets/images/1x/img-women-mask-1x.png";
+import womenMask2x from "../../assets/images/2x/img-women-mask-2x.png";
+
 import Card from "app/components/card";
 
 import { ReactComponent as Icalender } from "../../assets/icon-calender.svg";
@@ -69,7 +71,17 @@ const Home = () => {
             </p>
             <Button>Become a tutor now!</Button>
           </div>
-          <img src={womenMask} alt="" />
+          <picture>
+            <source
+              srcSet={`${womenMask1x} 1x, ${womenMask2x} 2x`}
+              media="(max-width: 1400em)"
+            />
+            <img
+              srcSet={`${womenMask1x} 1x, ${womenMask2x} 2x`}
+              alt="women cask"
+              src={womenMask1x}
+            ></img>
+          </picture>
         </div>
       </section>
       <section className="faqs">
@@ -112,5 +124,3 @@ Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaec
 };
 
 export default Home;
-
-

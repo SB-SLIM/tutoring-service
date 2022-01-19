@@ -1,10 +1,34 @@
 import logo from "../../assets/logo.svg";
 import { TiArrowSortedDown } from "react-icons/ti";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import clsx from "clsx";
+import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const lagagesList = useRef<HTMLDivElement>(null);
+  const [isActive, setIsActive] = useState(false);
+  const [isShow, setIsShow] = useState(false);
+
+  const handelShow = () => {
+    setIsShow(!isShow);
+  };
+
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      if (width > 899) {
+        console.log(width);
+        setIsActive(true);
+      } else {
+        console.log(width);
+        setIsActive(false);
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const onMouseenter = () => {
     if (lagagesList.current !== null) {
@@ -19,12 +43,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="container navbar__container">
-        <div className="navbar__left">
-          <Link to="/" className="logo">
-            <img src={logo} alt="logo" />
-          </Link>
+    <nav>
+      <div className="container ">
+        <Link to="/" className="logo">
+          <img src={logo} alt="logo" />
+        </Link>
+
+        <button className="toggle-navbar" onClick={handelShow}>
+          <FaBars className="btn-icon" />
+        </button>
+        <div
+          className={clsx("navbar collapse", (isActive || isShow) && `show`)}
+        >
           <ul className="links">
             <li className="link-item">
               <Link to={{ pathname: "/", hash: "section-2" }}>
@@ -40,34 +70,33 @@ const Navbar = () => {
               <Link to={{ pathname: "/", hash: "section-3" }}>FAQs</Link>
             </li>
           </ul>
-        </div>
-        <div className="navbar__right">
-          <button
-            className="langage"
-            type="button"
-            onMouseEnter={onMouseenter}
-            onMouseLeave={onMouseleave}
-          >
-            <TiArrowSortedDown />
-            <span>English (En)</span>
-            <div
-              className="langages-list collapse"
-              ref={lagagesList}
+          <div className="navbar__right">
+            <button
+              className="langage"
+              type="button"
+              onMouseEnter={onMouseenter}
               onMouseLeave={onMouseleave}
             >
-              <div className="triangle">
-                <div className="inside" />
+              <TiArrowSortedDown />
+              <span>English (En)</span>
+              <div
+                className="langages-list collapse"
+                ref={lagagesList}
+                onMouseLeave={onMouseleave}
+              >
+                <div className="triangle">
+                  <div className="inside" />
+                </div>
+                <ul>
+                  <li>English (En)</li>
+                  <li>Frensh (Fr)</li>
+                </ul>
               </div>
-              <ul>
-                <li>English (En)</li>
-                <li>Frensh (Fr)</li>
-              </ul>
-            </div>
-          </button>
-
-          <Link to="/about-us" className="link-item">
-            About us
-          </Link>
+            </button>
+            <Link to="/about-us" className="link-item">
+              About us
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
