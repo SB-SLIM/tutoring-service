@@ -8,6 +8,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
+
     &__img {
       position: relative;
       .circle-1 {
@@ -20,6 +25,15 @@
         top: 30px;
         left: 0;
         z-index: -1000;
+        @include respond(lg) {
+          width: 9rem;
+          height: 9rem;
+          left: 10px;
+        }
+
+        @include respond(sm) {
+          display: none;
+        }
       }
       .circle-2 {
         position: absolute;
@@ -31,10 +45,24 @@
         top: 0px;
         left: 410px;
         z-index: -1000;
+        @include respond(lg) {
+          width: 13rem;
+          height: 13rem;
+          top: 20px;
+          left: 255px;
+        }
+
+        @include respond(sm) {
+          display: none;
+        }
       }
 
-      img{
+      img {
         height: 100%;
+
+        @include respond(sm) {
+          display: none;
+        }
       }
     }
     &__title {
@@ -56,6 +84,15 @@
         display: inline-block;
         right: -10rem;
         z-index: -1000;
+
+        @include respond(lg) {
+          width: 25rem;
+          height: 25rem;
+        }
+
+        @include respond(sm) {
+          display: none;
+        }
       }
 
       .title {
@@ -70,15 +107,29 @@
   background: $clr-bg-light-2;
   &__work {
     padding: 10rem 2rem;
+
+    @include respond(lg) {
+      padding: 6rem 2rem;
+    }
+
     .cards {
       display: grid;
-      grid-template-columns: repeat(4, minmax(min-content, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(24.5rem, min-content));
       column-gap: 3rem;
+
+      @include respond(lg) {
+        justify-content: center;
+        row-gap: 2rem;
+      }
+
+      @include respond(sm) {
+        grid-template-columns: minmax(24.5rem, 40rem);
+      }
     }
   }
   &__tuto {
     display: grid;
-    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(55.7rem, min-content));
 
     overflow: hidden;
     .info {
@@ -90,16 +141,20 @@
 
     img {
       transform: translateX(13%);
+
+      @include respond(lg) {
+        display: none;
+      }
     }
   }
 }
 
 // Section-3: faqs
 
-.faqs{
+.faqs {
   padding: 3rem 2rem;
 
-  &__btn-container{
+  &__btn-container {
     padding: 5rem 2rem;
   }
 }
