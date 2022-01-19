@@ -8,13 +8,13 @@ const Navbar = () => {
 
   const onMouseenter = () => {
     if (lagagesList.current !== null) {
-      lagagesList.current.classList.add("active");
+      lagagesList.current.classList.add("show");
     }
   };
 
   const onMouseleave = () => {
     if (lagagesList.current !== null) {
-      lagagesList.current.classList.remove("active");
+      lagagesList.current.classList.remove("show");
     }
   };
 
@@ -51,7 +51,7 @@ const Navbar = () => {
             <TiArrowSortedDown />
             <span>English (En)</span>
             <div
-              className="langages-list"
+              className="langages-list collapse"
               ref={lagagesList}
               onMouseLeave={onMouseleave}
             >
@@ -60,7 +60,6 @@ const Navbar = () => {
               </div>
               <ul>
                 <li>English (En)</li>
-                <hr />
                 <li>Frensh (Fr)</li>
               </ul>
             </div>

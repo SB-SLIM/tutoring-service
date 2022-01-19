@@ -8,7 +8,7 @@ import { ReactComponent as Icalender } from "../../assets/icon-calender.svg";
 import { ReactComponent as Icam } from "../../assets/icon-cam.svg";
 import { ReactComponent as Icoins } from "../../assets/icon-coins.svg";
 import { ReactComponent as Ishare } from "../../assets/icon-share.svg";
-
+import Accordion from "app/components/accordion";
 
 const Home = () => {
   return (
@@ -72,9 +72,45 @@ const Home = () => {
           <img src={womenMask} alt="" />
         </div>
       </section>
-      <section>section 3</section>
+      <section className="faqs">
+        <div className="title u-mb">
+          <h3>FAQs</h3>
+        </div>
+        <div className="u-mb">
+          <Accordion
+            title="Which countries do you operate?"
+            body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde sequi voluptatem ut distinctio corporis soluta doloremque ipsum, pariatur totam voluptate? Earum dolore delectus explicabo cum reiciendis ipsam maiores fugit consequuntur.
+Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaecati illum eum sapiente a porro alias asperiores eligendi quas at numquam omnis, perspiciatis voluptates velit tempore veritatis repellendus fugiat. Beatae."
+          />
+          <Accordion
+            title="Subjects offered?"
+            body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde sequi voluptatem ut distinctio corporis soluta doloremque ipsum, pariatur totam voluptate? Earum dolore delectus explicabo cum reiciendis ipsam maiores fugit consequuntur.
+Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaecati illum eum sapiente a porro alias asperiores eligendi quas at numquam omnis, perspiciatis voluptates velit tempore veritatis repellendus fugiat. Beatae."
+          />
+          <Accordion
+            title="School Curriculum offered?"
+            body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde sequi voluptatem ut distinctio corporis soluta doloremque ipsum, pariatur totam voluptate? Earum dolore delectus explicabo cum reiciendis ipsam maiores fugit consequuntur.
+Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaecati illum eum sapiente a porro alias asperiores eligendi quas at numquam omnis, perspiciatis voluptates velit tempore veritatis repellendus fugiat. Beatae."
+          />
+          <Accordion
+            title="Do I set my own fee or is it a fixed fee?"
+            body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde sequi voluptatem ut distinctio corporis soluta doloremque ipsum, pariatur totam voluptate? Earum dolore delectus explicabo cum reiciendis ipsam maiores fugit consequuntur.
+Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaecati illum eum sapiente a porro alias asperiores eligendi quas at numquam omnis, perspiciatis voluptates velit tempore veritatis repellendus fugiat. Beatae."
+          />
+          <Accordion
+            title="Do I have to download special software?"
+            body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde sequi voluptatem ut distinctio corporis soluta doloremque ipsum, pariatur totam voluptate? Earum dolore delectus explicabo cum reiciendis ipsam maiores fugit consequuntur.
+Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaecati illum eum sapiente a porro alias asperiores eligendi quas at numquam omnis, perspiciatis voluptates velit tempore veritatis repellendus fugiat. Beatae."
+          />
+        </div>
+      </section>
+      <div className="faqs__btn-container">
+        <Button type="primary-outlined">More FAQs</Button>
+      </div>
     </main>
   );
 };
 
 export default Home;
+
+

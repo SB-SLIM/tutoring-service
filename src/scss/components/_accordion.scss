@@ -1,0 +1,40 @@
+.accordion {
+  &-item {
+  }
+
+  &-header {
+    font-weight: 400;
+    padding: 2.5rem 0;
+  }
+
+  &-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 0;
+    background: none;
+
+    &::after {
+      flex-shrink: 0;
+      width: 10px;
+      height: 10px;
+      margin-left: auto;
+      content: "";
+      background-image: url("../../assets/icon-arrow-down.svg");
+      background-repeat: no-repeat;
+      background-size: 10px;
+    }
+    &:focus{
+        outline: 0;
+    }
+  }
+
+  &-collapse {
+  }
+
+  &-body {
+      padding: 2rem 1rem;
+      font-size: 1.4rem;
+  }
+}

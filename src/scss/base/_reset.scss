@@ -13,12 +13,16 @@
 *,
 *::before,
 *::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 /* Reapply the pointer cursor for anchor tags */
 a {
     cursor: revert;
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Remove list styles (bullets/numbers) */
