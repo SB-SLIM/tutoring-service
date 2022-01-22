@@ -1,7 +1,7 @@
 import React from "react";
 import "../scss/main.scss";
 import { Header, Footer } from "./layouts";
-import { About, Home } from "./pages";
+import { About, Home, OnBoarding } from "./pages";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 const App = () => {
@@ -12,6 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<About />} />
+          <Route path="/on-boarding" element={<OnBoarding />} />
         </Routes>
         <Footer />
       </BrowserRouter>

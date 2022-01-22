@@ -62,9 +62,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="link-item">
-              <Link to={{ pathname: "/", hash: "section-1" }}>
-                Become a tutor
-              </Link>
+              <Link to={"/on-boarding"}>Become a tutor</Link>
             </li>
             <li className="link-item">
               <Link to={{ pathname: "/", hash: "section-3" }}>FAQs</Link>

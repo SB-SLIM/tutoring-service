@@ -8,13 +8,25 @@ function Accordion({ title, body }: { title?: String; body?: String }) {
   };
 
   return (
-    <div className="accordion-item">
+    <div className="accordion-item" id="accordion-parent">
       <h4 className="accordion-header" id="headingOne">
-        <button className="accordion-button" type="button" onClick={handleShow}>
+        <a
+          href="#collapseOne"
+          className="accordion-button"
+          type="button"
+          onClick={handleShow}
+          data-toggle="collapse"
+          data-target="#collapseOne"
+          data-parrent="#accordion-parent"
+        >
           {title}
-        </button>
+        </a>
       </h4>
-      <div className={clsx("accordion-collapse collapse", isShow && "show")}>
+      <div
+        id="collapseOne"
+        className={clsx("accordion-collapse collapse ", isShow && "show")}
+        data-parrent="#accordion-parent"
+      >
         <div className="accordion-body">{body}</div>
       </div>
       <hr />

@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+.onBoarding {
+  padding: 3rem 2rem;
+
+  .subject {
+    display: grid;
+    grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 1fr);
+    padding: 2rem 3rem;
+
+    @include respond(sm) {
+      grid-template-columns: minmax(min-content, 1fr);
+      row-gap: 3rem; 
+    }
+
+    &-info {
+      padding: 1.5rem 4rem;
+      text-align: left;
+
+      @include respond(sm) {
+      grid-row: 1/2; 
+    }
+    }
+  }
+}

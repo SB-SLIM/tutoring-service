@@ -12,13 +12,29 @@
     padding: 2rem 2rem;
     color: white;
     font-size: 1.4rem;
+
+    @include respond(sm) {
+      flex-direction: column;
+    }
+
     .footer-links {
       display: grid;
-      grid-template-columns: repeat(3, minmax(min-content, 20rem));
+      grid-template-columns: repeat((3, minmax(min-content, 20rem)));
+
+      @include respond(sm) {
+        grid-template-columns: repeat(2, minmax(min-content, 15rem));
+        margin-bottom: 1.5rem;
+      }
 
       .links {
         display: flex;
         flex-direction: column;
+
+        @include respond(sm) {
+          &:last-child {
+            display: none;
+          }
+        }
 
         & > *:not(:last-child) {
           margin-bottom: 2rem;

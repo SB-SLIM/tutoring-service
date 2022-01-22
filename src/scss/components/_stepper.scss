@@ -1,0 +1,63 @@
+@use "../abstracts" as *;
+
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .step {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    &-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &__lvl {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        background-color: $clr-primary;
+        color: $clr-white;
+        font-size: 3rem;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      &__lvl::after {
+        content: "";
+        border: 2px solid;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        position: absolute;
+      }
+      &__line {
+        height: 1.5rem;
+        background-color: $clr-primary;
+        flex-shrink: 1;
+        flex-grow: 1;
+        position: relative;
+      }
+    }
+
+    &-label {
+      color: $clr-primary;
+      font-size: 2rem;
+      text-align: center;
+    }
+    &-label--firstChd {
+      text-align: left;
+      margin-left: 1rem;
+    }
+    &-label--lastChd {
+      text-align: right;
+      margin-right: 1rem;
+    }
+  }
+}

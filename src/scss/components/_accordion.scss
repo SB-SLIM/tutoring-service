@@ -26,16 +26,24 @@
       background-repeat: no-repeat;
       background-size: 10px;
     }
-    &:focus{
-        outline: 0;
+    &:focus {
+      outline: 0;
     }
   }
 
-  &-collapse {
+  &-collapse:target {
+  // height: 0;
+  // overflow: hidden;
+}
+
+ &-collapse {
+  //  height: 150px !important;
+  //  overflow-y: auto;
+  // transition: height 3.35s ease;
   }
 
   &-body {
-      padding: 2rem 1rem;
-      font-size: 1.4rem;
+    padding: 2rem 1rem;
+    font-size: 1.4rem;
   }
 }

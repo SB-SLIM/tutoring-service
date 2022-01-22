@@ -25,3 +25,11 @@ hr {
   height: 1px;
   width: 100%;
 }
+
+/*
+* Header-height: 7rem
+* Footer-height: 24rem + 7rem
+*/
+.page-100{
+  min-height: calc(100vh - 7rem - (24rem + 7rem));
+}
