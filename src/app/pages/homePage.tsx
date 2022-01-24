@@ -93,26 +93,31 @@ const Home = () => {
             title="Which countries do you operate?"
             body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde sequi voluptatem ut distinctio corporis soluta doloremque ipsum, pariatur totam voluptate? Earum dolore delectus explicabo cum reiciendis ipsam maiores fugit consequuntur.
 Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaecati illum eum sapiente a porro alias asperiores eligendi quas at numquam omnis, perspiciatis voluptates velit tempore veritatis repellendus fugiat. Beatae."
+            index={0}
           />
           <Accordion
             title="Subjects offered?"
             body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde sequi voluptatem ut distinctio corporis soluta doloremque ipsum, pariatur totam voluptate? Earum dolore delectus explicabo cum reiciendis ipsam maiores fugit consequuntur.
 Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaecati illum eum sapiente a porro alias asperiores eligendi quas at numquam omnis, perspiciatis voluptates velit tempore veritatis repellendus fugiat. Beatae."
+            index={1}
           />
           <Accordion
             title="School Curriculum offered?"
             body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde sequi voluptatem ut distinctio corporis soluta doloremque ipsum, pariatur totam voluptate? Earum dolore delectus explicabo cum reiciendis ipsam maiores fugit consequuntur.
 Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaecati illum eum sapiente a porro alias asperiores eligendi quas at numquam omnis, perspiciatis voluptates velit tempore veritatis repellendus fugiat. Beatae."
+            index={2}
           />
           <Accordion
             title="Do I set my own fee or is it a fixed fee?"
             body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde sequi voluptatem ut distinctio corporis soluta doloremque ipsum, pariatur totam voluptate? Earum dolore delectus explicabo cum reiciendis ipsam maiores fugit consequuntur.
 Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaecati illum eum sapiente a porro alias asperiores eligendi quas at numquam omnis, perspiciatis voluptates velit tempore veritatis repellendus fugiat. Beatae."
+            index={3}
           />
           <Accordion
             title="Do I have to download special software?"
             body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde sequi voluptatem ut distinctio corporis soluta doloremque ipsum, pariatur totam voluptate? Earum dolore delectus explicabo cum reiciendis ipsam maiores fugit consequuntur.
 Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaecati illum eum sapiente a porro alias asperiores eligendi quas at numquam omnis, perspiciatis voluptates velit tempore veritatis repellendus fugiat. Beatae."
+            index={4}
           />
         </div>
       </section>

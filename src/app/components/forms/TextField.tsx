@@ -10,7 +10,7 @@ function TextField({
   label: String;
 }) {
   return (
-    <div className="form-controll">
+    <div className="form-control">
       <label className="form-label" htmlFor={id}>
         {label}
       </label>

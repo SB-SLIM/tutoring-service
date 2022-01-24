@@ -30,20 +30,26 @@
       outline: 0;
     }
   }
-
-  &-collapse:target {
-  // height: 0;
-  // overflow: hidden;
-}
-
- &-collapse {
-  //  height: 150px !important;
-  //  overflow-y: auto;
-  // transition: height 3.35s ease;
+  &-collapse {
+    max-height: 30rem;
+    overflow-y: auto;
+    opacity: 1;
+    transition: max-height .5s;
+    
+    &:not(.open) {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
   }
 
   &-body {
     padding: 2rem 1rem;
     font-size: 1.4rem;
   }
+}
+
+
+[id *= "#collapse-"]:target{
+  background-color: yellow;
 }

@@ -1,8 +1,18 @@
 import clsx from "clsx";
 import React, { useState } from "react";
-function Accordion({ title, body }: { title?: String; body?: String }) {
+
+function Accordion({
+  title,
+  body,
+  index,
+}: {
+  title?: String;
+  body?: String;
+  index: number;
+}) {
   const [isShow, setIsShow] = useState(false);
 
+  console.log(index);
   const handleShow = () => {
     setIsShow(!isShow);
   };
@@ -13,18 +23,17 @@ function Accordion({ title, body }: { title?: String; body?: String }) {
         <a
           href="#collapseOne"
           className="accordion-button"
-          type="button"
           onClick={handleShow}
           data-toggle="collapse"
-          data-target="#collapseOne"
+          data-target={`#collapse${index}`}
           data-parrent="#accordion-parent"
         >
           {title}
         </a>
       </h4>
       <div
-        id="collapseOne"
-        className={clsx("accordion-collapse collapse ", isShow && "show")}
+        id={`#collapse-${index}`}
+        className={clsx("accordion-collapse  ", isShow && "open")}
         data-parrent="#accordion-parent"
       >
         <div className="accordion-body">{body}</div>

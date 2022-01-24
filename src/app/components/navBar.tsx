@@ -57,15 +57,25 @@ const Navbar = () => {
         >
           <ul className="links">
             <li className="link-item">
-              <Link to={{ pathname: "/", hash: "section-2" }}>
+              <Link
+                to={{ pathname: "/", hash: "section-2" }}
+                className="btn btn-text"
+              >
                 how its works
               </Link>
             </li>
             <li className="link-item">
-              <Link to={"/on-boarding"}>Become a tutor</Link>
+              <Link to={"/on-boarding"} className="btn btn-text">
+                Become a tutor
+              </Link>
             </li>
             <li className="link-item">
-              <Link to={{ pathname: "/", hash: "section-3" }}>FAQs</Link>
+              <Link
+                to={{ pathname: "/", hash: "section-3" }}
+                className="btn btn-text"
+              >
+                FAQs
+              </Link>
             </li>
           </ul>
           <div className="navbar__right">
@@ -91,7 +101,7 @@ const Navbar = () => {
                 </ul>
               </div>
             </button>
-            <Link to="/about-us" className="link-item">
+            <Link to="/about-us" className="btn btn-text">
               About us
             </Link>
           </div>

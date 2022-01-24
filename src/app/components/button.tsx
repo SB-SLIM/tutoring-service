@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Button({ type, children }: { type?: String; children: String }) {
   let style = "btn";
 

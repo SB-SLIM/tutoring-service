@@ -1,28 +1,42 @@
-@use '../abstracts' as *; 
+@use "../abstracts" as *;
 
-.form{
+.form {
+  &-control {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    // width: 80%;
+    margin-bottom: 3rem;
+  }
+  &-label {
+    margin-bottom: 0.2rem;
+  }
 
-    &-controll{
-        display: flex;
-        flex-direction: column;
-        font-size: 1.4rem;
-        // width: 80%;
-        margin-bottom: 3rem;
-    }
-    &-label{
-        margin-bottom: .2rem;
-    }
+  &-input {
+    height: 5.6rem;
+    border: 1px solid $clr-grey-light-2;
+    border-radius: 5px;
+    padding: 1.8rem;
+    font-size: 1.4rem;
+  }
 
-    &-input{
-        height: 5.6rem;
-        border: 1px solid $clr-grey-light-2;
-        border-radius: 5px;
-        padding: 1.8rem;
-    }
-    
-    
+  &-input:focus {
+    border: 1px solid $clr-primary;
+  }
 
-    &-input:focus{
-        border: 1px solid $clr-primary;
-    }
+  
 }
+select{
+    position: relative;
+    &::after{
+    content: '';
+    width: 10rem;
+    height: 2rem;
+    background-color: yellow;
+    font-size: 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+}
+  }

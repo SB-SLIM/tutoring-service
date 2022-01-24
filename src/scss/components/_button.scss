@@ -1,8 +1,9 @@
 @use "../abstracts" as *;
 
-.btn:link,
-.btn:visited,
-.btn {
+.btn,
+btn:link,
+btn:visited {
+  display: block;
   border-radius: 5px;
   padding: 1rem 3rem;
   width: max-content;
@@ -31,8 +32,21 @@
   &--primary-outlined {
     color: $clr-primary;
     border: 1px solid $clr-primary;
-  background: $clr-white;
+    background: $clr-white;
+  }
 
+  &-text {
+    &:link,
+    &:visited {
+      display: inline-block;
+      border: none;
+      background: $clr-white;
+      color: #000000;
+      box-shadow: none;
+    }
+    &:hover, &:active {
+      color:$clr-primary;
+    }
   }
 
   &--secondary {

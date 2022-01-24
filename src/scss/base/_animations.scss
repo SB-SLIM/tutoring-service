@@ -1,14 +1,8 @@
 .collapse {
+
   &:not(.show) {
-    display: none;
+     display: none;
   }
 }
 
 
-//FIXME: transition not work
-.collapsing {
-  // height: 0;
-  // overflow: hidden;
-  // transition: height 3.35s ease;
-}
- 
