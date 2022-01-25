@@ -7,7 +7,7 @@ import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const lagagesList = useRef<HTMLDivElement>(null);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
   const [isShow, setIsShow] = useState(false);
 
   const handelShow = () => {
@@ -25,7 +25,6 @@ const Navbar = () => {
         setIsActive(false);
       }
     }
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -77,6 +76,11 @@ const Navbar = () => {
                 FAQs
               </Link>
             </li>
+            <li className="link-item">
+              <Link to="/about-us" className="btn btn-text">
+                About us
+              </Link>
+            </li>
           </ul>
           <div className="navbar__right">
             <button
@@ -101,8 +105,8 @@ const Navbar = () => {
                 </ul>
               </div>
             </button>
-            <Link to="/about-us" className="btn btn-text">
-              About us
+            <Link to="/login" className="btn btn-text">
+              Login
             </Link>
           </div>
         </div>

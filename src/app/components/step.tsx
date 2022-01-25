@@ -1,17 +1,14 @@
 import clsx from "clsx";
 import React from "react";
 
-function Step({
-  label,
-  index,
-  isLastChd,
-  isSlected,
-}: {
+interface StepProps {
   label: String;
   index: number;
   isLastChd: Boolean;
   isSlected: Boolean;
-}) {
+}
+
+function Step({ label, index, isLastChd, isSlected }: StepProps) {
   return (
     <div className="step ">
       <div className="step-body">

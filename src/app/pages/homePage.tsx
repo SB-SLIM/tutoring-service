@@ -1,20 +1,17 @@
-import Button from "app/components/button";
 import React from "react";
 import women from "../../assets/images/1x/img-women-1x.png";
 import womenMask1x from "../../assets/images/1x/img-women-mask-1x.png";
 import womenMask2x from "../../assets/images/2x/img-women-mask-2x.png";
 
-import Card from "app/components/card";
-
 import { ReactComponent as Icalender } from "../../assets/icon-calender.svg";
 import { ReactComponent as Icam } from "../../assets/icon-cam.svg";
 import { ReactComponent as Icoins } from "../../assets/icon-coins.svg";
 import { ReactComponent as Ishare } from "../../assets/icon-share.svg";
-import Accordion from "app/components/accordion";
+import { Accordion, Button, Card } from "app/components";
 
 const Home = () => {
   return (
-    <main className="home ">
+    <main className="home container">
       <section className="hero">
         <div className="hero__img">
           <div className="circle-1" />

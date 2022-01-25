@@ -9,6 +9,7 @@ btn:visited {
   width: max-content;
   font-size: 1.2rem;
   text-transform: capitalize;
+  text-align: center;
   cursor: pointer;
   transition: all 0.2s;
   background: $clr-primary;
@@ -58,5 +59,21 @@ btn:visited {
     color: $clr-secondary-student;
     border: 1px solid $clr-secondary-student;
     background: $clr-white;
+  }
+}
+
+
+// SIZE
+.btn{
+
+  &--md{
+    width: max(40%, 75%);
+    font-size: 1.4rem;
+  }
+
+  &--lg{
+    width: -webkit-fill-available;
+    font-size: 1.6rem;
+    height: 5rem;
   }
 }
