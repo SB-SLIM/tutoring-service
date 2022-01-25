@@ -23,7 +23,7 @@ function OnBoarding() {
           <Selectebox label="What's the highest degree you have received?" />
 
           <div className="text-align--end">
-            <Button>Start</Button>
+            <Button label="Start" />
           </div>
         </Forms>
         <div className="subject-info">

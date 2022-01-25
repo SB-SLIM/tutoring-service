@@ -56,7 +56,7 @@ const Footer = () => {
                 <TiSocialInstagram className="icon" />
               </a>
             </div>
-            <Button>Become a tutor now!</Button>
+            <Button label={"Become a tutor now!"} />
           </div>
         </div>
       </div>

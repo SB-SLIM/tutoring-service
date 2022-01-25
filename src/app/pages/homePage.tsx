@@ -29,7 +29,7 @@ const Home = () => {
           <p className="u-mb">
             With us, dive deeper into the ocean of knowledge
           </p>
-          <Button>Become a tutor now!</Button>
+          <Button label="Become a tutor now!" />
         </div>
       </section>
       <section className="how">
@@ -69,7 +69,7 @@ const Home = () => {
               We’re always looking for talented tutors. Set your own rate, get
               paid and make a difference.
             </p>
-            <Button>Become a tutor now!</Button>
+            <Button label="Become a tutor now!" />
           </div>
           <picture>
             <source
@@ -122,7 +122,7 @@ Rerum vero dolorum praesentium quis voluptatem minus accusantium repellat obcaec
         </div>
       </section>
       <div className="faqs__btn-container">
-        <Button type="primary-outlined">More FAQs</Button>
+        <Button type="primary-outlined" label="More FAQs" />
       </div>
     </main>
   );
