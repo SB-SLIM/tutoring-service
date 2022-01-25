@@ -45,6 +45,8 @@ nav {
     flex-shrink: 0;
     flex-grow: 1;
 
+
+    
     @include respond(md) {
       position: absolute;
       background: white;

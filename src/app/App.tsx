@@ -1,7 +1,7 @@
 import React from "react";
 import "../scss/main.scss";
 import { Header, Footer } from "./layouts";
-import { About, Home, OnBoarding } from "./pages";
+import { About, Home, OnBoarding, Login, FindTutor } from "./pages";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 const App = () => {
@@ -13,6 +13,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/on-boarding" element={<OnBoarding />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/find-tutor" element={<FindTutor />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -7,7 +7,7 @@ import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const lagagesList = useRef<HTMLDivElement>(null);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
   const [isShow, setIsShow] = useState(false);
 
   const handelShow = () => {
@@ -25,7 +25,6 @@ const Navbar = () => {
         setIsActive(false);
       }
     }
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

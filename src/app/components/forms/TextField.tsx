@@ -1,19 +1,21 @@
+import clsx from "clsx";
 import React from "react";
 
-function TextField({
-  id = "",
-  type,
-  label = "",
-}: {
+interface TfieldProps {
   id: string;
   type?: "text" | "email";
-  label: String;
-}) {
+  label?: String;
+  style?: String;
+}
+
+const TextField = ({ id, type, label, style }: TfieldProps) => {
   return (
-    <div className="form-control">
-      <label className="form-label" htmlFor={id}>
-        {label}
-      </label>
+    <div className={clsx("form-control", style && `${style}`)}>
+      {label && (
+        <label className="form-label" htmlFor={id}>
+          {label}
+        </label>
+      )}
       <input
         className="form-input"
         type={type}
@@ -23,6 +25,6 @@ function TextField({
       />
     </div>
   );
-}
+};
 
 export default TextField;

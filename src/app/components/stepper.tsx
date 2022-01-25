@@ -1,5 +1,7 @@
 import React from "react";
-import Step from "./step";
+import { Step } from ".";
+
+
 
 function Stepper({ steps }: { steps: Object[] }) {
   const stepsLengh = steps.length;

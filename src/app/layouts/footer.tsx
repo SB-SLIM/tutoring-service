@@ -5,8 +5,8 @@ import { TiSocialInstagram } from "react-icons/ti";
 import { AiFillFacebook } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
-import Button from "app/components/button";
 import { Link } from "react-router-dom";
+import { Button } from "app/components";
 
 const Footer = () => {
   return (
@@ -42,7 +42,7 @@ const Footer = () => {
                 Follow us <span className="follow-text">#Btutor</span>
               </p>
             </div>
-            <div className="socials-icon">
+            <div className="socials-icons">
               <a href="#test">
                 <AiFillFacebook className="icon" />
               </a>

@@ -1,12 +1,15 @@
 .u-mb {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem !important;
 }
 .u-mb-xl {
-  margin-bottom: 3.5rem;
+  margin-bottom: 3.5rem !important;
+}
+.u-mb-xxl {
+  margin-bottom: 5rem !important;
 }
 
 .display-none {
-  display: none;
+  display: none !important;
 }
 
 .fade {

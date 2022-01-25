@@ -1,8 +1,5 @@
-import Button from "app/components/button";
-import Selectebox from "app/components/forms/Selectebox";
-import TextField from "app/components/forms/TextField";
-import Stepper from "app/components/stepper";
-import Forms from "app/layouts/forms";
+import { Button, Selectebox, Stepper, TextField } from "app/components";
+import { Forms } from "app/layouts";
 import React from "react";
 
 const steps = [
@@ -13,7 +10,7 @@ const steps = [
 
 function OnBoarding() {
   return (
-    <main className="page-100 onBoarding">
+    <main className="page-100 onBoarding container">
       <Stepper steps={steps} />
       <div className="subject">
         <Forms>
