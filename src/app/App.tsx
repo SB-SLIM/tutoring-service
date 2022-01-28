@@ -3,6 +3,7 @@ import "../scss/main.scss";
 import { Header, Footer } from "./layouts";
 import { About, Home, OnBoarding, Login, FindTutor } from "./pages";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import PrivateRoute from "./pages/private.Route";
 
 const App = () => {
   return (
@@ -14,7 +15,10 @@ const App = () => {
           <Route path="/about-us" element={<About />} />
           <Route path="/on-boarding" element={<OnBoarding />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/find-tutor" element={<FindTutor />} />
+          <Route
+            path="/find-tutor"
+            element={<PrivateRoute component={FindTutor} />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

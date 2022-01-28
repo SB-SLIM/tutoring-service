@@ -6,9 +6,18 @@ interface TfieldProps {
   type?: "text" | "email";
   label?: String;
   style?: String;
+  value?: string;
+  handelChange?: (e: any) => void;
 }
 
-const TextField = ({ id, type, label, style }: TfieldProps) => {
+const TextField = ({
+  id,
+  type,
+  label,
+  style,
+  handelChange,
+  value,
+}: TfieldProps) => {
   return (
     <div className={clsx("form-control", style && `${style}`)}>
       {label && (
@@ -22,6 +31,8 @@ const TextField = ({ id, type, label, style }: TfieldProps) => {
         name={id}
         id={id}
         placeholder="name@example.com"
+        value={value}
+        onChange={handelChange}
       />
     </div>
   );

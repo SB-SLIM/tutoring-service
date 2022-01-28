@@ -13,6 +13,7 @@ function Button({ type, label, handelClick, size }: BtnProps) {
   if (size && size !== "sm") {
     style = `${style} btn--${size}`;
   }
+
   if (type) {
     style = `${style} btn--${type}`;
   }

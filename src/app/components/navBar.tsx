@@ -1,12 +1,11 @@
 import logo from "../../assets/logo.svg";
-import { TiArrowSortedDown } from "react-icons/ti";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { FaBars } from "react-icons/fa";
+import { Langages } from ".";
 
 const Navbar = () => {
-  const lagagesList = useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = useState(true);
   const [isShow, setIsShow] = useState(false);
 
@@ -28,18 +27,6 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const onMouseenter = () => {
-    if (lagagesList.current !== null) {
-      lagagesList.current.classList.add("show");
-    }
-  };
-
-  const onMouseleave = () => {
-    if (lagagesList.current !== null) {
-      lagagesList.current.classList.remove("show");
-    }
-  };
 
   return (
     <nav>
@@ -83,28 +70,7 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="navbar__right">
-            <button
-              className="langage"
-              type="button"
-              onMouseEnter={onMouseenter}
-              onMouseLeave={onMouseleave}
-            >
-              <TiArrowSortedDown />
-              <span>English (En)</span>
-              <div
-                className="langages-list collapse"
-                ref={lagagesList}
-                onMouseLeave={onMouseleave}
-              >
-                <div className="triangle">
-                  <div className="inside" />
-                </div>
-                <ul>
-                  <li>English (En)</li>
-                  <li>Frensh (Fr)</li>
-                </ul>
-              </div>
-            </button>
+            <Langages />
             <Link to="/login" className="btn btn-text">
               Login
             </Link>

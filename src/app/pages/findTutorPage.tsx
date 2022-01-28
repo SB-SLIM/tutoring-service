@@ -1,4 +1,4 @@
-import { CardTutor, Pagination } from "app/components";
+import { CardTutor, Pagination } from "app/components/index";
 import { SearchBar, SortBar } from "app/layouts";
 import React from "react";
 
