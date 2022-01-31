@@ -1,31 +1,73 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { users } from "../Data/users";
 
+// type User = {
+//   userID: number | string;
+//   name: string;
+//   email: string;
+// };
+
 interface IUserContext {
-  user: Object;
+  user: { userID: number | string | null };
+  login: Function;
+  logout: () => void;
+  authTokens: string;
 }
 
-const UserContext = createContext({} as IUserContext);
+const UserContext = createContext<IUserContext>({
+  user: { userID: null },
+  login: () => {},
+  logout: () => {},
+  authTokens: "",
+});
 
 const UserProvider = ({ children }: any) => {
-  type User = typeof initUser;
+  const navigate = useNavigate();
 
-  const initUser = {
-    userID: -1,
-    name: "",
-    email: "",
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("userAuth") || "{}")
+  );
+  const setUserAuth = (data: Object) => {
+    setUser(data);
+    localStorage.setItem("userAuth", JSON.stringify(data));
   };
 
-  const [user, setUser] = useState<User>(initUser);
+  const [authTokens, setAuthTokens] = useState(
+    localStorage.getItem("tokens") || ""
+  );
+  const setTokens = (data: string) => {
+    setAuthTokens(data);
+    localStorage.setItem("tokens", data);
+  };
 
-  useEffect(() => {
-    setUser(users[0]);
-  }, []);
+  //LOGIN function
+  const login = (email: string) => {
+    const userTmp = users.find((u) => u.email === email);
 
-  console.log(user);
+    if (userTmp) {
+      setTokens(JSON.stringify(userTmp));
+      setUserAuth(userTmp);
+
+      navigate("/find-tutor");
+    } else {
+      navigate("/login");
+      throw new Error(`user ${email} does't exist`);
+    }
+  };
+
+  //LOGOUT function
+  const logout = () => {
+    setUser({});
+    setAuthTokens("");
+    localStorage.clear();
+    navigate("/");
+  };
 
   return (
-    <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ authTokens, user, login, logout }}>
+      {children}
+    </UserContext.Provider>
   );
 };
 

@@ -1,13 +1,26 @@
 import logo from "../../assets/logo.svg";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { FaBars } from "react-icons/fa";
 import { Langages } from ".";
+import { UserContext } from "app/context/user.Context";
+import { navPublicItems, navPrivateItems } from "../Data/data";
+import { ReactComponent as IconMsg } from "../../assets/icon-msg.svg";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(true);
   const [isShow, setIsShow] = useState(false);
+  const [items, setItems] = useState(navPublicItems);
+  const { user, logout } = useContext(UserContext);
+
+  useEffect(() => {
+    if (user.userID) {
+      setItems(navPrivateItems);
+    } else {
+      setItems(navPublicItems);
+    }
+  }, [user]);
 
   const handelShow = () => {
     setIsShow(!isShow);
@@ -17,10 +30,8 @@ const Navbar = () => {
     function handleResize() {
       const width = window.innerWidth;
       if (width > 899) {
-        console.log(width);
         setIsActive(true);
       } else {
-        console.log(width);
         setIsActive(false);
       }
     }
@@ -42,38 +53,37 @@ const Navbar = () => {
           className={clsx("navbar collapse", (isActive || isShow) && `show`)}
         >
           <ul className="links">
-            <li className="link-item">
-              <Link
-                to={{ pathname: "/", hash: "section-2" }}
-                className="btn btn-text"
-              >
-                how its works
-              </Link>
-            </li>
-            <li className="link-item">
-              <Link to={"/on-boarding"} className="btn btn-text">
-                Become a tutor
-              </Link>
-            </li>
-            <li className="link-item">
-              <Link
-                to={{ pathname: "/", hash: "section-3" }}
-                className="btn btn-text"
-              >
-                FAQs
-              </Link>
-            </li>
-            <li className="link-item">
-              <Link to="/about-us" className="btn btn-text">
-                About us
-              </Link>
-            </li>
+            {items.map((item, index) => {
+              const { to, label } = item;
+              return (
+                <li className="link-item" key={index}>
+                  <Link to={to} className="btn btn-text">
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
           <div className="navbar__right">
             <Langages />
-            <Link to="/login" className="btn btn-text">
-              Login
-            </Link>
+            {user.userID && (
+              <Link to="/messages" className="btn btn-text">
+                <span className="position-relative">
+                  <IconMsg className="btn--icon" />
+                  <span className="badge">9</span>
+                </span>
+                Messages
+              </Link>
+            )}
+            {!user.userID ? (
+              <Link to="/login" className="btn btn-text">
+                Login
+              </Link>
+            ) : (
+              <Link to="/" className="btn btn-text" onClick={logout}>
+                Logout
+              </Link>
+            )}
           </div>
         </div>
       </div>

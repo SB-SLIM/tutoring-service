@@ -14,7 +14,7 @@ function Button({ type, label, handelClick, size }: BtnProps) {
     style = `${style} btn--${size}`;
   }
 
-  if (type) {
+  if (type && type !== "submit") {
     style = `${style} btn--${type}`;
   }
 

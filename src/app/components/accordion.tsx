@@ -12,7 +12,6 @@ function Accordion({
 }) {
   const [isShow, setIsShow] = useState(false);
 
-  console.log(index);
   const handleShow = () => {
     setIsShow(!isShow);
   };

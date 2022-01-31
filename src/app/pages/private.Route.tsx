@@ -1,14 +1,6 @@
-import React from "react";
+import { UserContext } from "app/context/user.Context";
+import React, { useContext } from "react";
 import { Navigate } from "react-router-dom";
-
-const userAuth = {
-  isAuthenticated: true,
-  user: {
-    userID: -1,
-    name: "",
-    email: "",
-  },
-};
 
 interface PrivateRouteProps {
   component: React.ComponentType;
@@ -16,13 +8,13 @@ interface PrivateRouteProps {
 }
 
 const PrivateRoute = ({ component: RouteComponent }: PrivateRouteProps) => {
-  const { isAuthenticated, user } = userAuth;
+  const { authTokens } = useContext(UserContext);
 
-  if (isAuthenticated && user) {
+  if (authTokens) {
     return <RouteComponent />;
+  } else {
+    return <Navigate to={"/"} />;
   }
-
-  return <Navigate to={"/"} />;
 };
 
 export default PrivateRoute;

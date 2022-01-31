@@ -1,19 +1,25 @@
 import { Button, TextField, Langages } from "app/components/index";
-import { Forms } from "app/layouts";
+
 import { ReactComponent as Logo } from "../../assets/logo.svg";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AiFillFacebook } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import { TiSocialInstagram } from "react-icons/ti";
+import { UserContext } from "app/context/user.Context";
 
 function LoginPage() {
+  const { login } = useContext(UserContext);
   const [value, setValue] = useState("");
+
+  const handelSubmit = (e: any) => {
+    e.preventDefault();
+    login(value);
+  };
 
   const handelChange = (e: any) => {
     const value = e.target.value;
-    console.log(value);
-    setValue(e.target.value);
+    setValue(value);
   };
 
   return (
@@ -23,7 +29,7 @@ function LoginPage() {
           <Logo />
           <h3>Sign into your account</h3>
         </div>
-        <Forms>
+        <form onSubmit={handelSubmit}>
           <TextField
             id="login"
             type="email"
@@ -31,12 +37,8 @@ function LoginPage() {
             value={value}
             handelChange={handelChange}
           />
-          <Button
-            label="Continue"
-            size="lg"
-            handelClick={() => console.log("first")}
-          />
-        </Forms>
+          <Button label="Continue" size="lg" />
+        </form>
 
         <div className="login__social">
           <p>Or sign in with</p>
