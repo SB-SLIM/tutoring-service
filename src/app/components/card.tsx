@@ -1,5 +1,3 @@
-import React from "react";
-
 interface CardProps {
   icon?: any;
   title: String;
@@ -9,10 +7,7 @@ interface CardProps {
 function Card({ icon, title, descr }: CardProps) {
   return (
     <div className="card">
-      <div className="card__icon">
-        {icon}
-        <span className="badge">9</span>
-      </div>
+      <div className="card__icon">{icon}</div>
       <div className="card__details">
         <h4>{title}</h4>
         <p>{descr}</p>

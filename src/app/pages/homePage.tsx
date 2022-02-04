@@ -1,4 +1,3 @@
-import React from "react";
 import women from "../../assets/images/1x/img-women-1x.png";
 import womenMask1x from "../../assets/images/1x/img-women-mask-1x.png";
 import womenMask2x from "../../assets/images/2x/img-women-mask-2x.png";

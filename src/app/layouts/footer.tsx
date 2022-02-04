@@ -1,12 +1,10 @@
-import React from "react";
-
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { TiSocialInstagram } from "react-icons/ti";
 import { AiFillFacebook } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Button } from "app/components";
+import { Button } from "app/components/index";
 
 const Footer = () => {
   return (
@@ -34,8 +32,6 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-social">
-            {/* <img src={logo} alt="logo" className="logo" />
-             */}
             <Logo className="logo" />
             <div>
               <p>

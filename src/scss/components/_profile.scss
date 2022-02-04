@@ -1,0 +1,13 @@
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        border-radius: 50%;
+        width: 5rem;
+        height: 5rem;
+    }
+    &__user{
+        padding: 1rem 2rem;
+    }
+}

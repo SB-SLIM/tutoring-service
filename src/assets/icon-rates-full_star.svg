@@ -1,0 +1,13 @@
+<svg id="rates_star_idle" data-name="rates/star/idle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.2" height="19.2" viewBox="0 0 19.2 19.2">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="a" d="M0,0H19.2V19.2H0Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="rates_star_half_star" data-name="rates/star/half_star">
+    <path id="a-2" data-name="a" d="M0,0H19.2V19.2H0Z" fill="none"/>
+    <g id="rates_star_half_star-2" data-name="rates/star/half_star" clip-path="url(#clip-path)">
+      <path id="Shape" d="M3.054,15.2v0L4.368,9.576,0,5.792,5.752,5.3,8,0l2.248,5.3,5.752.5L11.64,9.576l1.3,5.622L8,12.216,3.056,15.2ZM8,3.281H8V10.72l3.016,1.824-.8-3.424,2.656-2.3-3.5-.3Z" transform="translate(1.6 1.6)" fill="#f5b100"/>
+    </g>
+  </g>
+</svg>

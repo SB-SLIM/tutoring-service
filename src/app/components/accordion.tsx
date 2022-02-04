@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Accordion({
   title,
@@ -12,7 +12,6 @@ function Accordion({
 }) {
   const [isShow, setIsShow] = useState(false);
 
-  console.log(index);
   const handleShow = () => {
     setIsShow(!isShow);
   };

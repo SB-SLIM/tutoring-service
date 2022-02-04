@@ -3,22 +3,27 @@ import React from "react";
 function Selectebox({
   options = ["", "value-1", "value-2"],
   label = "select exemple",
-  selectName = "select-exemple",
+  name,
+  value,
+  handleChange,
 }: {
   options?: string[];
   label?: string;
-  selectName?: string;
+  name: string;
+  value: string;
+  handleChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }) {
   return (
     <div className="form-control">
-      <label htmlFor={selectName} className="form-label">
+      <label htmlFor={name} className="form-label">
         {label}
       </label>
       <select
-        name={selectName}
-        id={selectName}
+        name={name}
+        id={name}
         className="form-input"
-        value={""}
+        value={value}
+        onChange={handleChange}
       >
         {options.map((value, index) => {
           return (
