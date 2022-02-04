@@ -1,3 +1,4 @@
+import { TeacherProvider } from "app/context/teatcher.Context";
 import { UserProvider } from "app/context/user.Context";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -8,7 +9,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <TeacherProvider>
+          <App />
+        </TeacherProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,

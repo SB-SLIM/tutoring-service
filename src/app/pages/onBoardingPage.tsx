@@ -1,6 +1,6 @@
 import { Button, Selectebox, Stepper, TextField } from "app/components";
 import { Forms } from "app/layouts";
-import React from "react";
+import React, { useState } from "react";
 
 const steps = [
   { label: "Subject", isSlected: true },
@@ -9,18 +9,59 @@ const steps = [
 ];
 
 function OnBoarding() {
+  const [selectSubject, setSelectSubject] = useState("");
+  const [selectDegree, setSelectDegree] = useState("");
+  const [email, setEmail] = useState("");
+  const [forms, setForms] = useState({});
+
+  const handleChange = (e: React.ChangeEvent<any>) => {
+    const tmp = e.target;
+
+    if (tmp) {
+      tmp.name === "selectSubject" && setSelectSubject(tmp.value);
+      tmp.name === "selectDegree" && setSelectDegree(tmp.value);
+      tmp.name === "email" && setEmail(tmp.value);
+    }
+  };
+
+  const handleSubmit = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const tmp = { email, selectSubject, selectDegree };
+    setForms(tmp);
+    setEmail("");
+    setSelectDegree("");
+    setSelectSubject("");
+    console.log(forms);
+  };
+
   return (
     <main className="page-100 onBoarding container">
       <Stepper steps={steps} />
       <div className="subject">
         <Forms>
-          <TextField id="{1}" label="What's your email address?" type="email" />
+          <TextField
+            id="{1}"
+            label="What's your email address?"
+            type="email"
+            value={email}
+            handleChange={handleChange}
+          />
 
-          <Selectebox label="What subject(s) would you like to teach?" />
-          <Selectebox label="What's the highest degree you have received?" />
+          <Selectebox
+            label="What subject(s) would you like to teach?"
+            name="selectSubject"
+            handleChange={handleChange}
+            value={selectSubject}
+          />
+          <Selectebox
+            label="What's the highest degree you have received?"
+            name="selectDegree"
+            handleChange={handleChange}
+            value={selectDegree}
+          />
 
           <div className="text-align--end">
-            <Button label="Start" />
+            <Button label="Start" handleSubmit={handleSubmit} />
           </div>
         </Forms>
         <div className="subject-info">

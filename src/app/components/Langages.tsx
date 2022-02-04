@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
 
 //we have to import list of langages

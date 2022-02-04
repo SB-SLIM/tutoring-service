@@ -21,3 +21,85 @@
     }
   }
 }
+
+.card-tutor {
+  display: grid;
+  grid-template-columns: minmax(min-content, 13rem) 1fr repeat(
+      2,
+      minmax(min-content, 14rem)
+    );
+  grid-template-rows: minmax(min-content, 15rem) minmax(min-content, 7rem);
+  box-shadow: 0rem 0.5rem 0.5rem rgb(0 0 0 / 10%);
+  border-radius: 8px;
+  background-color: $clr-white;
+  margin-bottom: 3rem;
+  padding: 2rem;
+
+  &__teacher {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: inherit;
+
+    img {
+      border-radius: 20%;
+      width: 13rem;
+      height: auto;
+    }
+  }
+  .icon {
+    color: #cccccc;
+    margin-right: 1rem;
+  }
+  &__details {
+    grid-column: 2/3;
+    padding: 0 3rem;
+    .teaches p,.speakes p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 1rem;
+      text-transform: capitalize;
+    }
+
+    .teaches {
+      display: flex;
+    }
+    .speakes {
+      display: flex;
+
+      &__speakes {
+        display: flex;
+      }
+
+      &__list {
+        display: flex;
+      }
+      &__item {
+        display: flex;
+      }
+       &__item::after{
+        content: ',';
+        align-self: center;
+        display: block;
+        font-size: inherit;
+      }
+    }
+  }
+
+  &__rate {
+    grid-column: 4/-1;
+    .price {
+      color: $clr-secondary-student;
+      font-size: 3.2rem;
+      font-weight: 600;
+    }
+  }
+
+  &__btn-container {
+    grid-column: 3/-1;
+    grid-row: 2/-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

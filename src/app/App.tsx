@@ -1,4 +1,3 @@
-import React from "react";
 import "../scss/main.scss";
 import { Header, Footer } from "./layouts";
 import { About, Home, OnBoarding, Login, FindTutor } from "./pages";

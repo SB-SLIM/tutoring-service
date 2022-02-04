@@ -1,4 +1,3 @@
-import React from "react";
 import { Step } from "./index";
 
 function Stepper({ steps }: { steps: Object[] }) {
@@ -16,6 +15,7 @@ function Stepper({ steps }: { steps: Object[] }) {
 
         return (
           <Step
+            key={index}
             index={index}
             label={label}
             isLastChd={isLastChd}

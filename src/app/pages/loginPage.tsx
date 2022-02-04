@@ -9,15 +9,15 @@ import { TiSocialInstagram } from "react-icons/ti";
 import { UserContext } from "app/context/user.Context";
 
 function LoginPage() {
-  const { login } = useContext(UserContext);
+  const { login, err } = useContext(UserContext);
   const [value, setValue] = useState("");
 
-  const handelSubmit = (e: any) => {
+  const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
     login(value);
   };
 
-  const handelChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setValue(value);
   };
@@ -29,15 +29,16 @@ function LoginPage() {
           <Logo />
           <h3>Sign into your account</h3>
         </div>
-        <form onSubmit={handelSubmit}>
+        <form>
           <TextField
             id="login"
             type="email"
             style="u-mb-xxl"
             value={value}
-            handelChange={handelChange}
+            handleChange={handleChange}
+            err={err}
           />
-          <Button label="Continue" size="lg" />
+          <Button label="Continue" size="lg" handleSubmit={handleSubmit} />
         </form>
 
         <div className="login__social">

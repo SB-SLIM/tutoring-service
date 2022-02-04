@@ -3,11 +3,11 @@ import React from "react";
 interface BtnProps {
   type?: String;
   label: String;
-  handelClick?: () => void;
+  handleSubmit?: (e: React.MouseEvent) => void;
   size?: "sm" | "md" | "lg";
 }
 
-function Button({ type, label, handelClick, size }: BtnProps) {
+function Button({ type, label, handleSubmit, size }: BtnProps) {
   let style = "btn";
 
   if (size && size !== "sm") {
@@ -19,7 +19,7 @@ function Button({ type, label, handelClick, size }: BtnProps) {
   }
 
   return (
-    <button type="submit" className={style} onClick={handelClick}>
+    <button type="submit" className={style} onClick={handleSubmit}>
       {label}
     </button>
   );

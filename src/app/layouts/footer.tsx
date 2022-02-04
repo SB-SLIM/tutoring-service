@@ -1,5 +1,3 @@
-import React from "react";
-
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { TiSocialInstagram } from "react-icons/ti";
 import { AiFillFacebook } from "react-icons/ai";

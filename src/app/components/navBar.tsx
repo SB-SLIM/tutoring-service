@@ -1,5 +1,5 @@
 import logo from "../../assets/logo.svg";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { FaBars } from "react-icons/fa";
@@ -7,9 +7,10 @@ import { Langages } from ".";
 import { UserContext } from "app/context/user.Context";
 import { navPublicItems, navPrivateItems } from "../Data/data";
 import { ReactComponent as IconMsg } from "../../assets/icon-msg.svg";
+import Profile from "./Profile";
 
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
   const [isShow, setIsShow] = useState(false);
   const [items, setItems] = useState(navPublicItems);
   const { user, logout } = useContext(UserContext);
@@ -80,9 +81,12 @@ const Navbar = () => {
                 Login
               </Link>
             ) : (
-              <Link to="/" className="btn btn-text" onClick={logout}>
-                Logout
-              </Link>
+              <>
+                <Profile picture={user.picture} userName={user.name} />
+                <Link to="/" className="btn btn-text" onClick={logout}>
+                  Logout
+                </Link>
+              </>
             )}
           </div>
         </div>
