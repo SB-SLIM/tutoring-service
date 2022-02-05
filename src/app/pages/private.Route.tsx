@@ -10,7 +10,7 @@ interface PrivateRouteProps {
 const PrivateRoute = ({ component: RouteComponent }: PrivateRouteProps) => {
   const { authTokens } = useContext(UserContext);
 
-  if (authTokens) {
+  if (authTokens !== null) {
     return <RouteComponent />;
   } else {
     return <Navigate to={"/"} />;

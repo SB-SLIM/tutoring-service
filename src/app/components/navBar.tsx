@@ -26,17 +26,17 @@ const Navbar = () => {
   const handelShow = () => {
     setIsShow(!isShow);
   };
-
-  useEffect(() => {
-    function handleResize() {
-      const width = window.innerWidth;
-      if (width > 899) {
-        setIsActive(true);
-      } else {
-        setIsActive(false);
-      }
+  function handleResize() {
+    const width = window.innerWidth;
+    if (width > 899) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
     }
+  }
+  useEffect(() => {
     window.addEventListener("resize", handleResize);
+    console.log(isActive);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 

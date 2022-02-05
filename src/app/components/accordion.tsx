@@ -15,7 +15,7 @@ function Accordion({
   const handleShow = () => {
     setIsShow(!isShow);
   };
-console.log("test");
+
   return (
     <div className="accordion-item" id="accordion-parent">
       <h4 className="accordion-header" id="headingOne">

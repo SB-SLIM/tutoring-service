@@ -14,7 +14,8 @@ btn:visited {
   
   cursor: pointer;
   transition: all 0.2s;
-  background: $clr-primary;
+  opacity: .95;
+  background-color: $clr-primary;
   color: $clr-white;
   outline: none;
   border: none;
@@ -23,6 +24,7 @@ btn:visited {
 .btn:hover {
   transform: translateY(-0.3);
   box-shadow: 0 1rem 2rem rgba(#000000, 0.2);
+  opacity: 1;
 }
 
 .btn:active,
@@ -52,9 +54,12 @@ btn:visited {
   }
 
   &--secondary {
-    background: $clr-secondary-student;
+    background: rgba($clr-secondary-student, .9);
     color: $clr-white;
   }
+   &--secondary:hover {
+background: rgba($clr-secondary-student, 1);
+   }
 
   &--secondary-outlined {
     color: $clr-secondary-student;

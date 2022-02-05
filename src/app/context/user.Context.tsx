@@ -14,7 +14,7 @@ interface IUserContext {
   user: User;
   login: Function;
   logout: () => void;
-  authTokens: string;
+  authTokens: string | null;
   err: string;
 }
 
@@ -43,7 +43,7 @@ const UserProvider = ({ children }: any) => {
   const [err, setErr] = useState("");
 
   const [authTokens, setAuthTokens] = useState(
-    localStorage.getItem("tokens") || ""
+    localStorage.getItem("tokens") || null
   );
   const setTokens = (data: string) => {
     setAuthTokens(data);
@@ -74,7 +74,7 @@ const UserProvider = ({ children }: any) => {
       email: undefined,
       picture: userDefaultImg,
     });
-    setAuthTokens("");
+    setAuthTokens(null);
     localStorage.clear();
     navigate("/");
   };
