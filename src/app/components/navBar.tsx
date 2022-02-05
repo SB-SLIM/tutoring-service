@@ -39,7 +39,7 @@ const Navbar = () => {
     console.log(isActive);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
+  console.log("t");
   return (
     <nav>
       <div className="container ">
