@@ -4,8 +4,8 @@ import React from "react";
 interface TfieldProps {
   id: string | number;
   type?: "text" | "email";
-  label?: String;
-  style?: String;
+  label?: string;
+  styles?: string;
   value?: string;
   handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   err?: string;
@@ -15,7 +15,7 @@ const TextField = ({
   id,
   type,
   label,
-  style,
+  styles,
   handleChange,
   value,
   err,
@@ -25,7 +25,7 @@ const TextField = ({
   };
 
   return (
-    <div className={clsx("form-control", style && `${style}`)}>
+    <div className={clsx("form-control", styles && `${styles}`)}>
       {label && (
         <label className="form-label" htmlFor={id.toString()}>
           {label}

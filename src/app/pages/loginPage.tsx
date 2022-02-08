@@ -33,7 +33,7 @@ function LoginPage() {
           <TextField
             id="login"
             type="email"
-            style="u-mb-xxl"
+            styles="u-mb-xxl"
             value={value}
             handleChange={handleChange}
             err={err}

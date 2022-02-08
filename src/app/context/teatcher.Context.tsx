@@ -64,7 +64,7 @@ const TeacherProvider = ({ children }: any) => {
 
   useEffect(() => {
     getTeatchers();
-  }, []);
+  }, [getTeatchers]);
 
   useEffect(() => {
     console.log("object SB");
