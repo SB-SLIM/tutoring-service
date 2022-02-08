@@ -1,6 +1,6 @@
 import { Button, Selectebox, Stepper, TextField } from "app/components";
 import { Forms } from "app/layouts";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 
 const steps = [
   { label: "Subject", isSlected: true },
@@ -14,7 +14,7 @@ function OnBoarding() {
   const [email, setEmail] = useState("");
   const [forms, setForms] = useState({});
 
-  const handleChange = (e: React.ChangeEvent<any>) => {
+  const handleChange = (e: ChangeEvent<any>) => {
     const tmp = e.target;
 
     if (tmp) {
@@ -50,12 +50,14 @@ function OnBoarding() {
           <Selectebox
             label="What subject(s) would you like to teach?"
             name="selectSubject"
+            options={["option-1", "option-2"]}
             handleChange={handleChange}
             value={selectSubject}
           />
           <Selectebox
             label="What's the highest degree you have received?"
             name="selectDegree"
+            options={["option-1", "option-2"]}
             handleChange={handleChange}
             value={selectDegree}
           />

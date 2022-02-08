@@ -4,7 +4,6 @@ import { ReactComponent as Iconmsg } from "../../assets/icon-msg.svg";
 import { ReactComponent as IconOpenBook } from "../../assets/icon-open-book.svg";
 
 function CardTutor({ name, desc, picture, price, rate, speaks, teaches }: any) {
-  console.log(teaches);
   return (
     <div className="card-tutor">
       <div className="card-tutor__teacher">

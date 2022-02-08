@@ -44,7 +44,7 @@
   }
 
   &-social {
-    & > *:not(:last-child & :first-child) {
+    & > *:not(:last-child, :first-child) {
       margin-bottom: 2rem;
     }
     .logo {

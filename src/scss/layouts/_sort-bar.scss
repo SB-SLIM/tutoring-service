@@ -1,0 +1,37 @@
+.sort {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > *:not(:last-child){
+        margin-right: 2rem;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > * {
+        margin: 0rem;
+        background-color: white;
+      }
+      & > *:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      .form-control {
+        
+      }
+    }
+  }
+}

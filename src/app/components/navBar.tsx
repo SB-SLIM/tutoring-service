@@ -10,7 +10,6 @@ import { ReactComponent as IconMsg } from "../../assets/icon-msg.svg";
 import Profile from "./Profile";
 
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(false);
   const [isShow, setIsShow] = useState(false);
   const [items, setItems] = useState(navPublicItems);
   const { user, logout } = useContext(UserContext);
@@ -26,20 +25,7 @@ const Navbar = () => {
   const handelShow = () => {
     setIsShow(!isShow);
   };
-  function handleResize() {
-    const width = window.innerWidth;
-    if (width > 899) {
-      setIsActive(true);
-    } else {
-      setIsActive(false);
-    }
-  }
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    console.log(isActive);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  console.log("t");
+
   return (
     <nav>
       <div className="container ">
@@ -50,9 +36,7 @@ const Navbar = () => {
         <button className="toggle-navbar" onClick={handelShow}>
           <FaBars className="btn-icon" />
         </button>
-        <div
-          className={clsx("navbar collapse", (isActive || isShow) && `show`)}
-        >
+        <div className={clsx("navbar collapse", isShow && `show`)}>
           <ul className="links">
             {items.map((item, index) => {
               const { to, label } = item;

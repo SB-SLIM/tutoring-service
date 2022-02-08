@@ -1,27 +1,35 @@
 import React from "react";
 
 function Selectebox({
-  options = ["", "value-1", "value-2"],
-  label = "select exemple",
+  options,
+  label,
   name,
   value,
   handleChange,
+  size,
 }: {
-  options?: string[];
+  options: string[];
   label?: string;
   name: string;
   value: string;
   handleChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  size?: "sm" | "md" | "xl";
 }) {
+  let style = "form-input";
+  if (size) {
+    style = `${style} form-input--${size}`;
+  }
   return (
     <div className="form-control">
-      <label htmlFor={name} className="form-label">
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={name} className="form-label">
+          {label}
+        </label>
+      )}
       <select
         name={name}
         id={name}
-        className="form-input"
+        className={style}
         value={value}
         onChange={handleChange}
       >

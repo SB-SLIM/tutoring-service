@@ -50,10 +50,13 @@ nav {
     align-items: center;
     flex-shrink: 0;
     flex-grow: 1;
-
+    &:not(.show){
+      display: flex;
+    }
 
     
     @include respond(md) {
+      display:flex;
       position: absolute;
       background: white;
       z-index: 1000;
@@ -62,8 +65,11 @@ nav {
       padding: 2rem;
       border-radius: 5px;
       box-shadow: 0 1rem 2rem rgba(#000000, 0.3);
+      &:not(.show){
+      display: none;
     }
-
+    }
+    
     .links {
       display: flex;
 
