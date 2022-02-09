@@ -4,13 +4,13 @@ import { SearchBar, SortBar } from "app/layouts";
 import { useContext } from "react";
 
 function FindTutorPage() {
-  const { all_teachers } = useContext(TeacherContext);
+  const { sorted_teachers } = useContext(TeacherContext);
   return (
     <main>
       <SearchBar />
       <div className="findTutor container">
         <SortBar />
-        {all_teachers?.map((teacher) => {
+        {sorted_teachers?.map((teacher) => {
           const { id } = teacher;
           return <CardTutor key={id} {...teacher} />;
         })}

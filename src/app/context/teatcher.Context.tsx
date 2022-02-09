@@ -13,7 +13,7 @@ type TTeacher = {
   name: string;
 };
 type TTeacherContext = {
-  all_teachers: TTeacher[];
+  sorted_teachers: TTeacher[];
   isLoading: boolean;
   nbrTeachers: number;
   page: number;
@@ -31,7 +31,7 @@ type TTeacherContext = {
   updateSort: (e: ChangeEvent<any>) => void;
 };
 const TeacherContext = createContext<TTeacherContext>({
-  all_teachers: [],
+  sorted_teachers: [],
   isLoading: false,
   nbrTeachers: 0,
   page: 1,
@@ -53,27 +53,29 @@ const TeacherProvider = ({ children }: any) => {
   const {
     getTeatchers,
     isLoading,
-    all_teachers,
     nbrTeachers,
     page,
     totalPage,
     sort,
     sortList,
     updateSort,
+    sortTeachers,
+    sorted_teachers,
   } = useTeachers();
 
   useEffect(() => {
     getTeatchers();
-  }, [getTeatchers]);
+  }, []);
 
   useEffect(() => {
-    console.log("object SB");
+    sortTeachers();
+    console.log(sorted_teachers);
   }, [sort]);
 
   return (
     <TeacherContext.Provider
       value={{
-        all_teachers,
+        sorted_teachers,
         isLoading,
         nbrTeachers,
         page,

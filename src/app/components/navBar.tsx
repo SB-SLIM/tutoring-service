@@ -12,10 +12,10 @@ import Profile from "./Profile";
 const Navbar = () => {
   const [isShow, setIsShow] = useState(false);
   const [items, setItems] = useState(navPublicItems);
-  const { user, logout } = useContext(UserContext);
+  const { user, logout, authTokens } = useContext(UserContext);
 
   useEffect(() => {
-    if (user.userID) {
+    if (user !== null) {
       setItems(navPrivateItems);
     } else {
       setItems(navPublicItems);
@@ -51,7 +51,7 @@ const Navbar = () => {
           </ul>
           <div className="navbar__right">
             <Langages />
-            {user.userID && (
+            {authTokens && (
               <Link to="/messages" className="btn btn-text">
                 <span className="position-relative">
                   <IconMsg className="btn--icon" />
@@ -60,16 +60,18 @@ const Navbar = () => {
                 Messages
               </Link>
             )}
-            {!user.userID ? (
+            {!authTokens ? (
               <Link to="/login" className="btn btn-text">
                 Login
               </Link>
             ) : (
               <>
                 <Profile picture={user.picture} userName={user.name} />
-                <Link to="/" className="btn btn-text" onClick={logout}>
-                  Logout
-                </Link>
+                <div className="profile-container">
+                  <Link to="/" className="btn btn-text" onClick={logout}>
+                    Logout
+                  </Link>
+                </div>
               </>
             )}
           </div>

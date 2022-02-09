@@ -45,6 +45,7 @@ function OnBoarding() {
             type="email"
             value={email}
             handleChange={handleChange}
+            styles="u-mb"
           />
 
           <Selectebox
@@ -53,6 +54,7 @@ function OnBoarding() {
             options={["option-1", "option-2"]}
             handleChange={handleChange}
             value={selectSubject}
+            styles="u-mb"
           />
           <Selectebox
             label="What's the highest degree you have received?"
@@ -60,6 +62,7 @@ function OnBoarding() {
             options={["option-1", "option-2"]}
             handleChange={handleChange}
             value={selectDegree}
+            styles="u-mb"
           />
 
           <div className="text-align--end">

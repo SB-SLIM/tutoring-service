@@ -7,17 +7,22 @@ function Selectebox({
   value,
   handleChange,
   size,
+  styles,
 }: {
   options: string[];
   label?: string;
   name: string;
   value: string;
+  styles?: string;
   handleChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   size?: "sm" | "md" | "xl";
 }) {
   let style = "form-input";
   if (size) {
     style = `${style} form-input--${size}`;
+  }
+  if (styles) {
+    style = `${style} ${styles}`;
   }
   return (
     <div className="form-control">

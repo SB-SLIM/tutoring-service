@@ -11,26 +11,32 @@ btn:visited {
   width: max-content;
   font-size: 1.2rem;
   text-transform: capitalize;
+ transform: translateY(0);
   
   cursor: pointer;
-  transition: all 0.2s;
   opacity: .95;
   background-color: $clr-primary;
   color: $clr-white;
   outline: none;
   border: none;
+  transition: translate .2s ease;
 }
 
 .btn:hover {
   transform: translateY(-0.3);
   box-shadow: 0 1rem 2rem rgba(#000000, 0.2);
   opacity: 1;
+  
+  &:not(.btn-text){ 
+    transform: translateY(-1px);
+  }
 }
 
 .btn:active,
 .btn:visited {
   transform: translateY(-0.1);
   box-shadow: 0 0.5rem 1rem rgba(#000000, 0.2);
+  transform: translateY(0);
 }
 
 .btn {
@@ -41,12 +47,14 @@ btn:visited {
   }
 
   &-text {
+    
     &:link,
     &:visited {
       border: none;
       background: $clr-white;
       color: #000000;
       box-shadow: none;
+  
     }
     &:hover, &:active {
       color:$clr-primary;

@@ -30,6 +30,10 @@ function LoginPage() {
           <h3>Sign into your account</h3>
         </div>
         <form>
+          <h4>
+            You can use:{" "}
+            <span style={{ textTransform: "none" }}>user_1@gmail.com</span>
+          </h4>
           <TextField
             id="login"
             type="email"

@@ -34,12 +34,9 @@ const UserContext = createContext<IUserContext>({
 const UserProvider = ({ children }: any) => {
   const navigate = useNavigate();
 
-  const [user, setUser] = useState<User>({
-    userID: null,
-    name: undefined,
-    email: undefined,
-    picture: userDefaultImg,
-  });
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("tokens")!) || null
+  );
   const [err, setErr] = useState("");
 
   const [authTokens, setAuthTokens] = useState(
@@ -68,12 +65,7 @@ const UserProvider = ({ children }: any) => {
 
   //LOGOUT function
   const logout = () => {
-    setUser({
-      userID: null,
-      name: undefined,
-      email: undefined,
-      picture: userDefaultImg,
-    });
+    setUser(null);
     setAuthTokens(null);
     localStorage.clear();
     navigate("/");
