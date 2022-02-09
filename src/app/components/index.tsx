@@ -9,7 +9,7 @@ import Step from "./Step";
 import Pagination from "./Pagination";
 import Langages from "./Langages";
 
-import Selectebox from "./forms/Selectebox";
+import Selectbox from "./forms/Selectbox";
 import TextField from "./forms/TextField";
 
 export {
@@ -20,7 +20,7 @@ export {
   CardTutor,
   Stepper,
   Step,
-  Selectebox,
+  Selectbox,
   TextField,
   Pagination,
   Langages,

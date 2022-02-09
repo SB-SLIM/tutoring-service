@@ -1,4 +1,4 @@
-import { Button, Selectebox, Stepper, TextField } from "app/components";
+import { Button, Selectbox, Stepper, TextField } from "app/components";
 import { Forms } from "app/layouts";
 import React, { ChangeEvent, useState } from "react";
 
@@ -48,18 +48,18 @@ function OnBoarding() {
             styles="u-mb"
           />
 
-          <Selectebox
+          <Selectbox
             label="What subject(s) would you like to teach?"
             name="selectSubject"
-            options={["option-1", "option-2"]}
+            options={["", "option-1", "option-2"]}
             handleChange={handleChange}
             value={selectSubject}
             styles="u-mb"
           />
-          <Selectebox
+          <Selectbox
             label="What's the highest degree you have received?"
             name="selectDegree"
-            options={["option-1", "option-2"]}
+            options={["", "option-1", "option-2"]}
             handleChange={handleChange}
             value={selectDegree}
             styles="u-mb"

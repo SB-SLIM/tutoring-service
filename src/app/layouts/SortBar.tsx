@@ -1,4 +1,4 @@
-import { Selectebox } from "app/components";
+import { Selectbox } from "app/components";
 import { TeacherContext } from "app/context/teatcher.Context";
 import { useContext } from "react";
 
@@ -20,21 +20,21 @@ function SortBar() {
       <div className="sort__right">
         <form>
           {/* //FIXME 3 selectBox - Fix: initialState/ value / onChange */}
-          <Selectebox
+          <Selectbox
             options={speaksList}
             name="speaks"
             value={speaks}
             size="sm"
             handleChange={updateSort}
           />
-          <Selectebox
+          <Selectbox
             options={genderList}
             name="gender"
             value={gender}
             size="sm"
             handleChange={updateSort}
           />
-          <Selectebox
+          <Selectbox
             options={matchsList}
             name="match"
             value={bestMatch}
